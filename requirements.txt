@@ -21,7 +21,6 @@ entrypoints==0.3
 Fiona==1.8.9.post2
 Flask==1.1.1
 folium==0.10.1
-GDAL==2.4.3
 geographiclib==1.50
 geopandas==0.6.3
 geopy==1.21.0
@@ -61,7 +60,6 @@ osmnx==0.11.4
 OWSLib==0.19.1
 packaging==20.1
 palettable==3.3.0
-pandana==0.4.4
 pandas==1.0.1
 pandocfilters==1.4.2
 parso==0.6.1

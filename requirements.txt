@@ -39,16 +39,6 @@ Jinja2==2.11.1
 joblib==0.14.1
 json5==0.9.0
 jsonschema==3.2.0
-jupyter-client==5.3.4
-jupyter-console==5.1.0
-jupyter-contrib-core==0.3.3
-jupyter-contrib-nbextensions==0.5.1
-jupyter-core==4.6.1
-jupyter-highlight-selected-word==0.2.0
-jupyter-latex-envs==1.4.4
-jupyter-nbextensions-configurator==0.4.1
-jupyterlab==1.2.6
-jupyterlab-server==1.0.6
 kiwisolver==1.1.0
 llvmlite==0.31.0
 lxml==4.5.0
@@ -71,7 +61,6 @@ osmnx==0.11.4
 OWSLib==0.19.1
 packaging==20.1
 palettable==3.3.0
-pandana==0.4.4
 pandas==1.0.1
 pandocfilters==1.4.2
 parso==0.6.1
@@ -103,7 +92,6 @@ pyzmq==18.1.1
 qtconsole==4.6.0
 rasterio==1.1.2
 requests==2.22.0
-Rtree==0.9.3
 scikit-learn==0.22.1
 scipy==1.4.1
 seaborn==0.10.0

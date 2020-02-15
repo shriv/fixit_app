@@ -103,7 +103,7 @@ def index():
                                  .extract(r'(\d+)', expand=False))
     # data_clean = loc_df[loc_df['trapline_letter_code'].isin(['bv', 'bo', 'et', 'rt'])]
 
-    for group in unique(loc_df['trapline_letter_code']):
+    for group in np.unique(loc_df['trapline_letter_code']):
         data_subset = (loc_df[loc_df['trapline_letter_code'] == group]
                        .sort_values(['lon', 'lat'], axis=0))
 

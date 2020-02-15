@@ -5,20 +5,14 @@ channels:
 
 dependencies:
   - python=3.6
-  - bokeh
-  - dill
   - flask
   - folium
   - geopandas
   - ipython
   - networkx
   - numba
+  - numpy
   - osmnx
-  - palettable
   - pandas
-  - pip
-  - rasterio
-  - scikit-learn
-  - seaborn
-  - xlrd
-  - xlsxwriter
+  - scipy
+

@@ -15,4 +15,6 @@ dependencies:
   - osmnx
   - pandas
   - scipy
+  - pip:
+    - gunicorn
 

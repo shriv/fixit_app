@@ -21,6 +21,8 @@ import folium
 import pandas as pd
 import numpy as np
 from scipy.interpolate import splrep, splev, UnivariateSpline
+import osmnx
+
 
 def get_data():
     fixit_df = pd.read_csv('https://docs.google.com/spreadsheets/d/e/2PACX-1vSwfyvQHwOopLW2pPDLm3wMZnaNTBlAleWZMeSf3uZVNUtJFoclY1ocYMk_6ywJts_OfiZHG71ShmsJ/pub?output=tsv', sep='\t')
@@ -127,6 +129,7 @@ def index():
     map.add_child(tpln)
     map.add_child(folium.LayerControl())
 
+    # Get paths from bounding box
 
     return map._repr_html_()
 

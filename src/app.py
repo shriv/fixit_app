@@ -19,7 +19,7 @@
 from flask import Flask
 import folium
 import pandas as pd
-import numpy as np
+# import numpy as np
 from scipy.interpolate import splrep, splev, UnivariateSpline
 
 
@@ -93,39 +93,40 @@ def index():
 
 
     # traplines layer
-    tpln = folium.FeatureGroup(name="trap lines")
+    # tpln = folium.FeatureGroup(name="trap lines")
+    #
+    # # add lines by trapline
+    # loc_df['trapline_letter_code'] = (loc_df['trap_code']
+    #                                   .str
+    #                                   .extract(r'([A-Z]+)', expand=False))
+    # loc_df['trapline_number'] = (loc_df['trap_code']
+    #                              .str
+    #                              .extract(r'(\d+)', expand=False))
+    # # data_clean = loc_df[loc_df['trapline_letter_code'].isin(['bv', 'bo', 'et', 'rt'])]
+    #
+    # for group in np.unique(loc_df['trapline_letter_code']):
+    #     data_subset = (loc_df[loc_df['trapline_letter_code'] == group]
+    #                    .sort_values(['lon', 'lat'], axis=0))
+    #
+    #     # Smooth trap line tracks
+    #     new_lon = np.linspace(min(data_subset['lon']), max(data_subset['lon']), 50)
+    #     # new_lat = np.linspace(min(data_subset['lat']), max(data_subset['lat']), 50)
+    #     if len(data_subset['lat']) > 10:
+    #         print(group)
+    #         # spline_lon = UnivariateSpline(range(len(data_subset['lon'])), data_subset['lon'], k = 2)
+    #         # spline_lat = UnivariateSpline(range(len(data_subset['lat'])), data_subset['lat'], k = 2)
+    #         spline_both = UnivariateSpline(data_subset['lon'], data_subset['lat'], k = 2)
+    #         fit_lat = spline_both(new_lon)
+    #         tracks = list(zip(fit_lat, new_lon))
+    #         tpln.add_child(folium.PolyLine(tracks,
+    #                                        popup = folium.Popup("<b> trapline: </b>" + group)))
+    #     else:
+    #         tracks = list(zip(data_subset['lat'], data_subset['lon']))
+    #         tpln.add_child(folium.PolyLine(tracks,
+    #                                        popup = folium.Popup("<b> Trapline: </b>" + group)))
+    #
+    # map.add_child(tpln)
 
-    # add lines by trapline
-    loc_df['trapline_letter_code'] = (loc_df['trap_code']
-                                      .str
-                                      .extract(r'([A-Z]+)', expand=False))
-    loc_df['trapline_number'] = (loc_df['trap_code']
-                                 .str
-                                 .extract(r'(\d+)', expand=False))
-    # data_clean = loc_df[loc_df['trapline_letter_code'].isin(['bv', 'bo', 'et', 'rt'])]
-
-    for group in np.unique(loc_df['trapline_letter_code']):
-        data_subset = (loc_df[loc_df['trapline_letter_code'] == group]
-                       .sort_values(['lon', 'lat'], axis=0))
-
-        # Smooth trap line tracks
-        new_lon = np.linspace(min(data_subset['lon']), max(data_subset['lon']), 50)
-        # new_lat = np.linspace(min(data_subset['lat']), max(data_subset['lat']), 50)
-        if len(data_subset['lat']) > 10:
-            print(group)
-            # spline_lon = UnivariateSpline(range(len(data_subset['lon'])), data_subset['lon'], k = 2)
-            # spline_lat = UnivariateSpline(range(len(data_subset['lat'])), data_subset['lat'], k = 2)
-            spline_both = UnivariateSpline(data_subset['lon'], data_subset['lat'], k = 2)
-            fit_lat = spline_both(new_lon)
-            tracks = list(zip(fit_lat, new_lon))
-            tpln.add_child(folium.PolyLine(tracks,
-                                           popup = folium.Popup("<b> trapline: </b>" + group)))
-        else:
-            tracks = list(zip(data_subset['lat'], data_subset['lon']))
-            tpln.add_child(folium.PolyLine(tracks,
-                                           popup = folium.Popup("<b> Trapline: </b>" + group)))
-
-    map.add_child(tpln)
     map.add_child(folium.LayerControl())
 
     # Get paths from bounding box

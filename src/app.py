@@ -20,7 +20,7 @@ from flask import Flask
 import folium
 import pandas as pd
 # import numpy as np
-from scipy.interpolate import splrep, splev, UnivariateSpline
+# from scipy.interpolate import splrep, splev, UnivariateSpline
 
 
 def get_data():

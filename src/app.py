@@ -21,7 +21,6 @@ import folium
 import pandas as pd
 import numpy as np
 from scipy.interpolate import splrep, splev, UnivariateSpline
-import osmnx
 
 
 def get_data():
@@ -34,7 +33,7 @@ def get_data():
                               .apply(lambda x : x.replace('#', '-')) )
 
     fixit_df['date'] = pd.to_datetime(fixit_df['Date Reported'], errors='coerce')
-    
+
     loc_df = pd.read_csv('https://docs.google.com/spreadsheets/d/e/2PACX-1vRWRILLGLCWk6dVYY7BeF7NH94_tMamKOmOacmzmTjDzfazTZUyegyryS7aLu3c3P0Mp26fGsblMoOE/pub?output=tsv', sep='\t')
 
     return fixit_df, loc_df
@@ -90,7 +89,7 @@ def index():
                                           color = 'red',
                                           fill=True,
                                           fill_opacity=0.7))
-    map.add_child(fgv)    
+    map.add_child(fgv)
 
 
     # traplines layer
